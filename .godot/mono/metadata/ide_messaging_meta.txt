@@ -1,0 +1,2 @@
+﻿62968
+C:/Users/starc/AppData/Roaming/godotenv/godot/bin/godot.exe

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1nj7kmg4b4kw"]
+
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_04j3g"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_04j3g")]
+position = Vector2(4, -4)
