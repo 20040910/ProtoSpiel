@@ -1,2 +1,2 @@
-﻿62968
-C:/Users/starc/AppData/Roaming/godotenv/godot/bin/godot.exe
+﻿9480
+C:/Users/anku0/AppData/Roaming/godotenv/godot/bin/godot.exe
