@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy23nwq6pd5hu"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_y80in"]
+[ext_resource type="Texture2D" uid="uid://bm88ctxw7pofm" path="res://characters/image (6).png" id="3_2vpge"]
+[ext_resource type="PackedScene" uid="uid://djsxd7im7bjt5" path="res://gun.tscn" id="3_pgex6"]
+[ext_resource type="Script" path="res://WeaponSwitcher.gd" id="4_urfw1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0w1fx"]
+radius = 30.0666
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5hvd"]
+radius = 36.1248
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuu6r"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhgwq"]
+bg_color = Color(0, 0.905882, 0.239216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_y80in")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0w1fx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="gun" parent="." instance=ExtResource("3_pgex6")]
+position = Vector2(115, -55)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_g5hvd")
+debug_color = Color(0.784314, 0.392157, 0.498039, 0.419608)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -108.0
+offset_top = -145.0
+offset_right = 108.0
+offset_bottom = -118.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xuu6r")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fhgwq")
+value = 100.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_2vpge")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("4_urfw1")
